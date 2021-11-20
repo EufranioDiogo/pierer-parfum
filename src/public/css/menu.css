@@ -1,0 +1,69 @@
+:root {
+  --main-color: '#CD9400';
+  --black-color: '#222';
+  --white-color: '#fff'
+}
+
+.main-menu-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  align-items: center;
+}
+
+.thin-text {
+  font-weight: 500
+}
+
+.logo-container--logo {
+  font-size: 4.8rem;
+  color: #CD9400;
+}
+
+.logo--black-container {
+  background-color: #222;
+  padding: 0.5rem 1rem;
+}
+.main-menu-container--menu {
+  display: flex;
+  list-style: none;
+}
+.main-menu-item {
+  margin: 0 1rem;
+  position: relative;
+}
+.menu-item--link {
+  text-decoration: none;
+  font-size: 2.4rem;
+  margin: 0 1rem;
+  position: relative;
+  color: var(--black-color);
+  display: inline-block;
+  transition: 0.5s;
+}
+.menu-item--link:hover {
+  color: #CD9400;
+}
+a.menu-item--link[href="#"] {
+  color: #CD9400;
+}
+.menu-item--link::after {
+  content: '';
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 0.5rem;
+  background-color: #CD9400;
+  opacity: 0;
+  transition: 0.5s
+}
+.menu-item--link:hover:after {
+  opacity: 1;
+  width: 120%;
+}
+a.menu-item--link[href="#"]::after {
+  opacity: 1;
+  width: 120%;
+}
