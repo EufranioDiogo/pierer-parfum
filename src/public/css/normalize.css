@@ -10,3 +10,13 @@
 html {
   font-size: 62.5%;
 }
+.main-container {
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.heading-1 {
+  font-size: 7.2rem;
+}
