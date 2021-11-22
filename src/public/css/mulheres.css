@@ -1,0 +1,113 @@
+.row-1 {
+  width: 100%;
+  display: flex;
+  height: 40vh;
+  margin: 5rem 0;
+}
+.heading-text-container {
+  width: 50%;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5rem solid #CD9400;
+}
+.heading-text-container--text {
+  width: 80%;
+}
+.img-header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.photo-container {
+  width: 50%;
+  position: relative;
+}
+.photo-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #cd930050;
+}
+
+.row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin: 2.5rem 0 5rem 0;
+}
+.perfume-container--img-container {
+  width: 100%;
+  height: 40vh;
+  position: relative;
+}
+.perfume-container--img-container--img {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.perfume-container--desc-container {
+  border: 0.5rem solid #CD9400;
+  padding: 1rem 2rem;
+}
+.desc-container--more-perfume-details {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem 0;
+}
+.more-perfume-details--label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  background-color: #CD9400;
+  width: 10%;
+  height: 0.5rem;
+}
+
+.more-perfume-details--label {
+  margin-bottom: 1rem;
+  padding-left: 0;
+  position: relative;
+}
+
+.fragancy-container {
+  display: flex;
+}
+
+.fragancy-container--inner-container {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.fragancy-container--element {
+  height: 100%;
+  width: 0.4rem;
+  background-color: #222;
+  margin-right: 0.2rem;
+}
+
+.fragancy-container--element-inactive {
+  background-color: #2229;
+}
+.btn-see-more-about-perfume {
+  text-decoration: none;
+  color: #222;
+  background-color: #ffc020b4;
+  padding: 0.5rem 2rem;
+  margin: 1rem 0;
+  display: inline-block;
+}
+.btn-see-more-about-perfume:hover {
+  background-color: #ffc020;
+}

@@ -1,36 +1,4 @@
-.heading-1 {
-  font-size: 5.6rem !important;
-  font-weight: 500;
-}
 
-.heading-2 {
-  font-size: 4.6rem !important;
-  font-weight: 500;
-}
-
-.heading-3 {
-  font-size: 3.6rem !important;
-  font-weight: 500;
-}
-
-.heading-4 {
-  font-size: 2.4rem !important;
-  font-weight: 500;
-}
-
-.normal-text {
-  font-size: 2.2rem !important;
-  font-weight: 500;
-}
-
-.text-width-45 {
-  display: inline-block;
-  width: 45%;
-}
-
-.main-color {
-  color: #CD9400 !important;
-}
 
 .margin-left-main-spacing {
   margin-left: 5%;
