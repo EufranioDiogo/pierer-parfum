@@ -2,14 +2,22 @@
   font-size: 5.6rem !important;
   font-weight: 500;
 }
+
 .heading-2 {
   font-size: 4.6rem !important;
   font-weight: 500;
 }
+
 .heading-3 {
   font-size: 3.6rem !important;
   font-weight: 500;
 }
+
+.heading-4 {
+  font-size: 2.4rem !important;
+  font-weight: 500;
+}
+
 .normal-text {
   font-size: 2.2rem !important;
   font-weight: 500;
@@ -19,12 +27,15 @@
   display: inline-block;
   width: 45%;
 }
+
 .main-color {
   color: #CD9400 !important;
 }
+
 .margin-left-main-spacing {
   margin-left: 5%;
 }
+
 .margin-right-main-spacing {
   margin-left: 10%;
 }
@@ -36,26 +47,32 @@
   margin: 4rem 0;
   margin-bottom: 10rem;
 }
+
 .row-1 {
   align-items: center;
 }
+
 .heading-text-container {
   width: 40%;
   display: flex;
   flex-direction: column;
 }
+
 .heading-text-container--text {
   font-size: 3.2rem;
 }
+
 .under-line {
   display: inline-block;
   padding: 0 1rem;
   border-bottom: 0.5rem solid #CD9400;
 }
+
 .heading-text-container--founder-quote-ref {
   margin-top: 5rem;
   position: relative;
 }
+
 .heading-text-container--founder-quote-ref::before {
   content: "";
   position: absolute;
@@ -65,27 +82,32 @@
   height: 2rem;
   background-color: #cd93004d;
 }
+
 .founder-quote-ref--name {
   color: #CD9400;
   font-size: 3.2rem;
   text-align: center;
 }
+
 .img-header-img {
   width: 50%;
   height: 46rem;
   object-fit: cover;
   margin: 1rem 2rem 0 0;
-  box-shadow: 1rem -1rem 0 #CD9400 ;
+  box-shadow: 1rem -1rem 0 #CD9400;
 }
+
 .row-2 {
   align-items: center;
 }
+
 .row-2-img {
   box-shadow: none;
   height: 55vh;
   border: 0.5rem solid #CD9400;
   width: 50%;
 }
+
 .row-2-text-container {
   color: #CD9400;
   padding: 3rem 4rem;
@@ -96,6 +118,7 @@
   width: 75%;
   right: 0;
 }
+
 .row-2-text-container::after, .row-2-text-container::before {
   content: "";
   background-color: #CD9400;
@@ -105,31 +128,37 @@
   top: 0;
   left: 0;
 }
+
 .row-2-text-container::after {
   top: unset;
   left: unset;
   bottom: 0;
   right: 0;
 }
+
 .heading-text-container--text {
   display: inline-block;
   width: 60%;
 }
+
 .row-3 {
   flex-direction: column;
 }
+
 .row-3--perfume-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 8rem;
 }
+
 .perfume-container--img-container {
   position: relative;
   width: 35%;
   height: 33.5rem;
   border-left: 0.5rem solid #CD9400;
 }
+
 .perfume-container--img-container--img {
   width: 100%;
   height: 100%;
@@ -137,11 +166,13 @@
   top: 0;
   object-fit: cover;
 }
+
 .perfume-container--desc-container {
   display: flex;
   flex-direction: column;
   width: 60%;
 }
+
 .desc-container--more-perfume-details {
   list-style: none;
   margin-top: 2rem;
@@ -150,35 +181,43 @@
   grid-template-rows: 1fr 1fr;
   gap: 2rem 1rem;
 }
+
 .more-perfume-details--label {
   margin-bottom: 1rem;
   padding-left: 0;
 }
+
 .fragancy-container {
   display: flex;
 }
+
 .fragancy-container--inner-container {
   display: flex;
   margin-right: 1rem;
 }
+
 .fragancy-container--element {
   height: 100%;
   width: 0.4rem;
   background-color: #222;
   margin-right: 0.2rem;
 }
+
 .fragancy-container--element-inactive {
   background-color: #2229;
 }
+
 .row-4--img-container {
   width: 100%;
   position: relative;
 }
+
 .row-4--img {
   width: 100%;
   height: 35vh;
   object-fit: cover
 }
+
 .row-4--img--hover-container {
   position: absolute;
   width: 100%;
@@ -189,20 +228,264 @@
   align-items: center;
   background: linear-gradient(to bottom, #2222226e, #cd93005d);
 }
+
 .row-4--img--hover-container--text {
   color: white;
   margin-left: 4rem;
   display: inline-block;
   width: 45%;
 }
+
 .row-5 {
   background-color: #222;
-  height: 50vh;
   width: 110%;
   transform: translateX(-5%);
   padding: 4rem 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-5--inner-row-1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 5rem 0;
+}
+
+.inner-row-1--img {
+  width: 60%;
+  border: 0.5rem solid #CD9400;
+  height: 65vh;
+  transform: translateX(-10%);
+  object-fit: cover;
+}
+
+.testimonial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+
+.testimonial-container--element {
+  width: 40rem;
+  height: 45vh;
+  position: relative;
+  border: 1rem solid #cd93002f;
+}
+
+.testimonial-container--element-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-container--element--message {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  bottom: 0;
+  padding: 2rem;
+  background-color: #2222227e;
+  position: absolute;
+  width: 100%;
+  height: 40%;
+}
+
+.testimonial-person-name {
+  color: #fff;
+}
+
+.testimonial-person-desc {
+  margin-top: 1rem;
+}
+
+.testimonial-container--controller {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.testimonial-container--controller--element {
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 0.5rem solid #CD9400;
+  margin: 0 0.5rem;
+}
+
+.testimonial-container--controller--element-active {
+  background-color: #CD9400;
+}
+
+.tips-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem auto;
+}
+
+.tip-container {
+  display: flex;
+  width: 32.5%;
+  flex-direction: column;
+  padding: 1rem;
+  border: 0.2rem solid #CD9400;
+  transition: 1.5s;
+  cursor: pointer;
+
+}
+
+.tip-container .heading-1 {
+  margin: 0;
+  padding: 1rem 3.5rem;
+  background-color: #CD9400;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.tip-container .heading-2 {
+  margin: 4rem 0;
+  color: #fff;
+}
+
+.tip-container .heading-3 {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.tip-container .heading-3::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  background-color: #CD9400;
+  height: 0.2rem;
+  width: 50%;
+}
+
+.tip-container:hover {
+  background-color: #fff;
+}
+
+.tip-container:hover .heading-2 {
+  color: #222;
+}
+
+.row-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row-6--img-container {
+  width: 100%;
+  transform: translateX(-20%);
+  position: relative;
+}
+
+.row-6--img {
+  width: 100%;
+  box-shadow: 1rem 1rem 0 #CD9400;
+}
+
+.row-6--main-text-container {
+  display: inline-block;
+  background-color: #CD9400;
+  padding: 6rem 4rem;
+  width: 40%;
+  border: 0.5rem solid #222;
+}
+
+.row-6--img--hover-container--text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10%;
+  color: #CD9400;
+}
+
+.row-7 {
+  width: 100% !important;
+  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: none;
+}
+
+.row-7--perfume-container {
+  flex-direction: column !important;
+  /* width: 100% !important; */
+  align-self: flex-start !important;
+  width: 80%;
+  margin: 0;
+  margin-bottom: 5rem;
+}
+
+.row-7--perfume-container .perfume-container--img-container {
+  position: relative;
+  width: 100%;
+  height: 33.5rem;
+  border-left: 0.5rem solid #CD9400;
+  margin-bottom: 1rem;
+}
+
+.row-7--perfume-container .perfume-container--img-container--img {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.row-7 .perfume-container--desc-container {
+  width: 100%;
+}
+
+.row-7--perfume-container .perfume-container--desc-container .desc-container--more-perfume-details {
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: 1fr;
+  margin-top: 1rem;
+}
+.row-8 {
+  margin-bottom: 20rem !important;
+}
+.row-8--img-container {
+  position: relative;
+}
+
+.row-8--img-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #cd93004d;
+}
+
+.row-8--img--hover-container--text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+
+.row-8--main-text-container {
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 70%);
+  z-index: 1;
+}
+
+@media screen and (min-width: 1440px) {
+  .tips-container {
+    flex-wrap: wrap !important;
+  }
 }
 /*
-
-              <h4 class="more-perfume-details--value normal-text">Forte</h4>
-              */
+  <h4 class="more-perfume-details--value normal-text">Forte</h4>
+*/

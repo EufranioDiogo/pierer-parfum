@@ -10,6 +10,15 @@
 html {
   font-size: 62.5%;
 }
+@media screen and (min-width: 1440px){
+  .main-container {
+    width: 1440px !important;
+  }
+  .row-5 {
+    transform: none !important;
+  }
+}
+
 .main-container {
   width: 90%;
   position: relative;
