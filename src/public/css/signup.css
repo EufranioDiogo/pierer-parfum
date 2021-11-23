@@ -1,0 +1,76 @@
+.main-container {
+  width: 100vw !important;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #222;
+  background-image: url(../../assets/images/pexels-alexandre-weiss-9443322.jpg);
+}
+.main-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #cd930054;
+}
+.main-title {
+  z-index: 1;
+  font-size: 12.8rem !important;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20%;
+  color: #fff;
+}
+.form-container {
+  z-index: 2;
+  align-self: flex-start;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem 4rem;
+  border-left: 0.5rem solid #CD9400;
+  right: 10%;
+}
+.form-container--inner-container {
+  margin: 4rem 0;
+}
+.inner-container--form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.inner-container--row {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+}
+.inner-container--row-input {
+  border: none;
+  border-bottom: 0.2rem solid #CD9400;
+  font-size: 2.4rem;
+}
+.inner-container--row-input:focus {
+  border: none;
+  border-bottom: 0.2rem solid #CD9400;
+  outline: none;
+}
+.form-container--controller {
+  display: flex;
+  justify-content: flex-end;
+}
+.form-container--controller-submit-button {
+  padding: 1rem 2rem;
+  font-size: 2.2rem;
+  border: none;
+  background-color: #cd9300be;
+  cursor: pointer;
+}
+.form-container--controller-submit-button:hover {
+  background-color: #cd9300;
+}
+.main-link-decoration {
+  text-decoration: underline !important;
+}

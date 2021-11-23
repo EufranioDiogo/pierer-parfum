@@ -94,7 +94,8 @@ row-2-main--container {
 .row-4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem
+  gap: 4rem;
+  margin-bottom: 20rem;
 }
 .row-4--element {
   height: 55vh;
@@ -115,4 +116,7 @@ row-2-main--container {
   background-color: #cd9300;
   border: 0.5rem #222 solid;
   padding: 2rem 8rem;
+}
+.row-4--element .row-3--left-container--img {
+  border-color: #cd9300;
 }
