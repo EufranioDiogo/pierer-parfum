@@ -13,14 +13,17 @@ html {
 @media screen and (min-width: 1440px){
   .main-container {
     width: 1440px !important;
+    /*
+    width: 90%
+    */
   }
+  /*
   .row-5 {
     transform: none !important;
-  }
+  }*/
 }
 
 .main-container {
-  width: 90%;
   position: relative;
   display: flex;
   flex-direction: column;

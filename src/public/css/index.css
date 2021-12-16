@@ -1,5 +1,7 @@
 
-
+.title-margin {
+  margin-left: 5rem;
+}
 .margin-left-main-spacing {
   margin-left: 5%;
 }
@@ -12,8 +14,9 @@
 .row-container {
   display: flex;
   justify-content: space-between;
-  margin: 4rem 0;
+  margin: 4rem auto;
   margin-bottom: 10rem;
+  width: 90%;
 }
 
 .row-1 {
@@ -71,7 +74,7 @@
 
 .row-2-img {
   box-shadow: none;
-  height: 55vh;
+  height: 55rem;
   border: 0.5rem solid #CD9400;
   width: 50%;
 }
@@ -125,6 +128,7 @@
   width: 35%;
   height: 33.5rem;
   border-left: 0.5rem solid #CD9400;
+  overflow: hidden;
 }
 
 .perfume-container--img-container--img {
@@ -133,6 +137,7 @@
   position: absolute;
   top: 0;
   object-fit: cover;
+  transition: 0.5s;
 }
 
 .perfume-container--desc-container {
@@ -182,7 +187,7 @@
 
 .row-4--img {
   width: 100%;
-  height: 35vh;
+  height: 40rem;
   object-fit: cover
 }
 
@@ -206,12 +211,12 @@
 
 .row-5 {
   background-color: #222;
-  width: 100%;
-  transform: translateX(-5%);
   padding: 4rem 0;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
+  margin: 4rem 0;
+  width: 100%;
 }
 
 .row-5--inner-row-1 {
@@ -223,7 +228,7 @@
 .inner-row-1--img {
   width: 60%;
   border: 0.5rem solid #CD9400;
-  height: 65vh;
+  height: 45rem;
   transform: translateX(-10%);
   object-fit: cover;
 }
@@ -238,10 +243,12 @@
 
 .testimonial-container--element {
   width: 40rem;
-  height: 45vh;
+  height: 45rem;
   position: relative;
   border: 1rem solid #cd93002f;
+  overflow-y: auto;
 }
+
 
 .testimonial-container--element-img {
   position: absolute;
@@ -282,6 +289,10 @@
   height: 3.2rem;
   border: 0.5rem solid #CD9400;
   margin: 0 0.5rem;
+  cursor: pointer;
+}
+.testimonial-container--controller--element:hover {
+  background-color: #CD9400;
 }
 
 .testimonial-container--controller--element-active {
@@ -356,6 +367,7 @@
 
 .row-6--img {
   width: 100%;
+  height: 40rem;
   box-shadow: 1rem 1rem 0 #CD9400;
 }
 
@@ -376,7 +388,6 @@
 }
 
 .row-7 {
-  width: 100% !important;
   flex-wrap: wrap;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -389,7 +400,13 @@
   align-self: flex-start !important;
   width: 80%;
   margin: 0;
+  padding-bottom: 2rem;
   margin-bottom: 5rem;
+  border-bottom: 0.5rem solid #ffffff;
+}
+
+.row-7--perfume-container:hover {
+  border-bottom: 0.5rem solid #CD9400;
 }
 
 .row-7--perfume-container .perfume-container--img-container {
@@ -398,6 +415,17 @@
   height: 33.5rem;
   border-left: 0.5rem solid #CD9400;
   margin-bottom: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s
+}
+
+.row-3--perfume-container:hover .perfume-container--img-container--img {
+  transform: scale(1.1)
+}
+
+.row-7--perfume-container:hover .perfume-container--img-container--img {
+  transform: scale(1.1)
 }
 
 .row-7--perfume-container .perfume-container--img-container--img {
@@ -405,6 +433,7 @@
   padding: 0;
   margin-bottom: 2rem;
   width: 100%;
+  transition: 0.5s
 }
 
 .row-7 .perfume-container--desc-container {
