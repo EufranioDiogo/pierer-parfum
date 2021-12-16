@@ -1,7 +1,7 @@
 .row-1 {
   width: 100%;
   display: flex;
-  height: 55vh;
+  height: 40rem;
   margin: 5rem 0;
   position: relative;
   margin-top: 10rem;
@@ -54,7 +54,7 @@
 }
 .perfume-container--img-container {
   width: 100%;
-  height: 40vh;
+  height: 40rem;
   position: relative;
 }
 .perfume-container--img-container--img {
@@ -115,9 +115,10 @@
   text-decoration: none;
   color: #222;
   background-color: #ffc020b4;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 4rem;
   margin: 1rem 0;
   display: inline-block;
+  font-size: 1.2rem
 }
 .btn-see-more-about-perfume:hover {
   background-color: #ffc020;

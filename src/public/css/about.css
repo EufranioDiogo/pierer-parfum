@@ -69,7 +69,10 @@ row-2-main--container {
   display: flex;
   flex-direction: column;
 }
-
+.row-3 .row-4--element {
+  height: auto;
+  margin-bottom: 10rem;
+}
 .inner-row-3-container {
   display: flex;
   height: 40rem;
@@ -111,7 +114,7 @@ row-2-main--container {
   margin-bottom: 20rem;
 }
 .row-4--element {
-  height: 55vh;
+  height: 50rem;
   position: relative;
   display: flex;
   justify-content: center;
