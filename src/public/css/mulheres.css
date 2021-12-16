@@ -1,7 +1,7 @@
 .row-1 {
   width: 100%;
   display: flex;
-  height: 40vh;
+  height: 40rem;
   margin: 5rem 0;
 }
 .heading-text-container {
@@ -10,7 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 0.5rem solid #CD9400;
+  border-top: 0.5rem solid #CD9400;
+  border-bottom: 0.5rem solid #CD9400;
 }
 .heading-text-container--text {
   width: 80%;
@@ -22,6 +23,9 @@
   position: absolute;
   top: 0;
   left: 0;
+  border-top: 0.5rem solid #CD9400;
+  border-bottom: 0.5rem solid #CD9400;
+
 }
 .photo-container {
   width: 50%;
@@ -36,12 +40,16 @@
   height: 100%;
   background-color: #cd930050;
 }
-
+.row-2--perfume-container {
+  display: flex;
+  flex-direction: column;
+}
 .row-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  margin: 2.5rem 0 5rem 0;
+  margin: 5rem auto;
+  width: 80%;
 }
 .perfume-container--img-container {
   width: 100%;
@@ -56,7 +64,8 @@
   object-fit: cover;
 }
 .perfume-container--desc-container {
-  border: 0.5rem solid #CD9400;
+  border: 0.25rem solid #CD9400;
+  border-top: none;
   padding: 1rem 2rem;
 }
 .desc-container--more-perfume-details {
