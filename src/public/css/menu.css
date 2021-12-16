@@ -67,3 +67,11 @@ a.menu-item--link[href="#"]::after {
   opacity: 1;
   width: 120%;
 }
+@media screen and (max-width: 1024px) {
+  .main-menu-container {
+    flex-direction: column;
+  }
+  .main-menu-container--menu {
+    margin-top: 2rem;
+  }
+}
