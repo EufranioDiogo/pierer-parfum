@@ -123,3 +123,27 @@
 .btn-see-more-about-perfume:hover {
   background-color: #ffc020;
 }
+
+@media screen and (max-width: 1024px) {
+  .row-1 {
+    flex-direction: column;
+    height: 50rem;
+    align-items: flex-start;
+  }
+  .photo-container {
+    height: 45rem;
+    width: 100%;
+    margin-left: 0;
+  }
+  .heading-text-container {
+    width: 100%;
+    position: relative;
+  }
+  .row-2 {
+    grid-template-columns: 1fr;
+  }
+  .row-2--perfume-container {
+    width: 80%;
+    margin: 2.5rem auto;
+  }
+}
