@@ -127,7 +127,7 @@
 @media screen and (max-width: 1024px) {
   .row-1 {
     flex-direction: column;
-    height: 50rem;
+    height: 65rem;
     align-items: flex-start;
   }
   .photo-container {
