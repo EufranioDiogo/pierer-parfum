@@ -483,6 +483,89 @@
     flex-wrap: wrap !important;
   }
 }
+@media screen and (max-width: 1024px) {
+  .tips-container {
+    flex-wrap: wrap !important;
+  }
+  .row-container {
+    flex-direction: column;
+    width: 90%;
+    position: relative;
+  }
+  .row-1 {
+    flex-direction: column-reverse;
+  }
+  .heading-text-container {
+    width: 90%;
+    margin-top: 4rem;
+  }
+  .row-2-text-container {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+  .heading-text-container--text {
+    width: 100%;
+    text-align: center;
+  }
+  .text-width-45 {
+    width: 80%;
+  }
+  .row-3 {
+    align-items: center;
+  }
+  .row-3--perfume-container {
+    flex-direction: column;
+    width: 65%;
+  }
+  .perfume-container--img-container {
+    width: 100%;
+  }
+  .perfume-container--desc-container {
+    width: 100%;
+  }
+  .row-4--img--hover-container {
+    justify-content: center;
+  }
+  .row-4--img--hover-container--text {
+    text-align: center;
+    width: 80%;
+  }
+
+  .row-3--perfume-container {
+    margin: 2.5rem auto;
+  }
+
+
+  .inner-row-1--img {
+    transform: none;
+    display: none;
+  }
+  .row-5--inner-row-1 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tips-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tip-container {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+  .row-6--main-text-container {
+    width: 100%;
+    z-index: 1;
+  }
+  .row-7 {
+    grid-template-columns: 1fr;
+  }
+  .row-8--main-text-container {
+    transform: none;
+    width: 100%;
+  }
+}
 /*
   <h4 class="more-perfume-details--value normal-text">Forte</h4>
 */
