@@ -350,7 +350,7 @@
 }
 
 .tip-container:hover .heading-2 {
-  color: #222;
+  color: #222 !important;
 }
 
 .row-6 {
