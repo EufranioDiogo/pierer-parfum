@@ -136,3 +136,30 @@ row-2-main--container {
 .row-4--element .row-3--left-container--img {
   border-color: #cd9300;
 }
+
+@media screen and (max-width: 1024px) {
+  .photo-container {
+    width: 100%;
+  }
+  .heading-text-container {
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+  }
+  .row-2--photo-container {
+    width: 100% !important;
+  }
+  .inner-row-3-container {
+    flex-direction: column;
+    height: 65rem;
+  }
+  .row-3--left-container {
+    width: 100%;
+  }
+  .row-3--right-container {
+    width: 100%;
+  }
+  .row-4 {
+    grid-template-columns: 1fr;
+  }
+}
