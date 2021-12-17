@@ -4,6 +4,13 @@
   width: 90%;
   position: relative;
 }
+.row-1 .row-4--element {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform:none;
+  height: auto;
+}
 .row-container {
   display: flex;
   position: relative;
@@ -38,6 +45,12 @@
 .row-2 {
   display: flex;
   margin: 25rem 0;
+}
+.row-2 .row-4--element {
+  position: absolute;
+  left: 0;
+  right: unset;
+  top: -10%;
 }
 row-2-main--container {
   width: 100%;
