@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="./css/variables.css">
   <link rel="stylesheet" href="./css/menu.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <title>Pierer Parfum</title>
 </head>
 
@@ -197,7 +200,8 @@
 
     <div class="row-container row-4">
       <div class="row-4--img-container">
-        <img src="../assets/images/perfumes/heidi-walley-m6sh2vS0Yjk-unsplash.jpg" alt="menina linda negra" class="row-4--img">
+        <img src="../assets/images/perfumes/heidi-walley-m6sh2vS0Yjk-unsplash.jpg" alt="menina linda negra"
+          class="row-4--img">
 
         <div class="row-4--img--hover-container">
           <span class="row-4--img--hover-container--text heading-2">
@@ -229,11 +233,10 @@
           </div>
 
           <div class="testimonial-container--controller">
-            <div class="testimonial-container--controller--element"></div>
-            <div class="testimonial-container--controller--element"></div>
-            <div class="testimonial-container--controller--element testimonial-container--controller--element-active">
-            </div>
-            <div class="testimonial-container--controller--element"></div>
+            <div class="testimonial-container--controller--element" onclick="changeQuoterIndex(0)"></div>
+            <div class="testimonial-container--controller--element" onclick="changeQuoterIndex(1)"></div>
+            <div class="testimonial-container--controller--element" onclick="changeQuoterIndex(2)"></div>
+            <div class="testimonial-container--controller--element" onclick="changeQuoterIndex(3)"></div>
 
           </div>
         </div>
@@ -436,14 +439,15 @@
 
     <div class="row-container row-6 row-8">
       <div class="row-6--img-container row-8--img-container">
-        <img src="../assets/images/pexels-alexandre-weiss-9443322.jpg" alt="menina linda negra" class="row-4--img row-6--img">
+        <img src="../assets/images/pexels-alexandre-weiss-9443322.jpg" alt="menina linda negra"
+          class="row-4--img row-6--img">
 
         <span class="row-8--img--hover-container--text heading-2">
           Parfum Pierer
         </span>
       </div>
       <span class="row-6--main-text-container heading-3 row-8--main-text-container">
-        Deixe o sua feminutude no ar com Pierer 
+        Deixe o sua feminutude no ar com Pierer
       </span>
     </div>
 
@@ -578,12 +582,63 @@
         </div>
       </div>
     </div>
-
-
-
-
   </div>
 
+  <footer class="footer-container">
+    <div class="footer-container--top-container">
+      <h2 class="footer-container--top-container--title thin-text">
+        Parfum Perir
+      </h2>
+    </div>
+
+    <ul class="main-menu-container--menu footer-container--middle-container">
+      <li class="main-menu--item">
+        <a href="#" class="menu-item--link">Home</a>
+      </li>
+      <li class="main-menu-item">
+        <a href="./html/homens.html" class="menu-item--link">Homens</a>
+      </li>
+      <li class="main-menu-item">
+        <a href="./html/mulheres.html" class="menu-item--link">Mulheres</a>
+      </li>
+      <li class="main-menu-item">
+        <a href="./html/about.html" class="menu-item--link">História</a>
+      </li>
+      <li class="main-menu-item">
+        <a href="./html/login.html" class="menu-item--link" target="_blank">Login</a>
+      </li>
+    </ul>
+
+
+    <div class="footer-container--footer-container">
+      <div class="footer-container--inner">
+        <ul class="social-menu-media-container">
+          <li class="social-menu-media-container--item">
+            <i class="fab fa-facebook-f social-menu-media-container--item--icon"></i>
+          </li>
+
+          <li class="social-menu-media-container--item">
+            <i class="fab fa-instagram social-menu-media-container--item--icon"></i>
+          </li>
+
+          <li class="social-menu-media-container--item">
+            <i class="fab fa-twitter social-menu-media-container--item--icon"></i>
+          </li>
+        </ul>
+
+
+        <h2 class="footer-container--footer-container--title thin-text">
+          Parfum Perir
+        </h2>
+      </div>
+
+      <h4 class="footer-container--author-props thin-text">
+        Developed by Eufránio Diogo
+      </h4>
+    </div>
+  </footer>
+
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
