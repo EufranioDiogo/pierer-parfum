@@ -46,7 +46,7 @@ const startSlide = () => {
     if (quoterIndex >= quoters.length) {
       quoterIndex = 0
     }
-  }, 2000)
+  }, 5000)
 }
 
 let slideStart = startSlide()
