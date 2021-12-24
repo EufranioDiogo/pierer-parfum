@@ -12,6 +12,7 @@ Product [x]
 	- family_fk
 	- fragance_rate
 	- gender
+	- product_photo
 
 Account [x]
 	- account_pk

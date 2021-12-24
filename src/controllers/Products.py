@@ -39,6 +39,8 @@ product_args.add_argument('origem_fk', type=int, help='Need to provide origem_fk
 product_args.add_argument('family_fk', type=int, help='Need to provide family_fk to product', required=True)
 product_args.add_argument('fragance_rate', type=int, help='Need to provide fragance rate to product', required=True)
 product_args.add_argument('gender', type=str, help='Need to provide gender to product', required=True)
+product_args.add_argument('product_photo', type=str, required=False)
+
 
 
 def create_product():
@@ -46,7 +48,8 @@ def create_product():
   global cursor, connection
 
   args = product_args.parse_args()
-  cursor.execute(f'INSERT INTO product(name, price, origem_fk, family_fk, fragance_rate, gender) VALUES(%s, %s, %s)', (args['name'], args['price'], args["origem_fk"], args["family_fk"], args["fragance_rate"], str(args["gender"]).lower()[0]))
+  print(args)
+  cursor.execute(f'INSERT INTO product(name, price, origem_fk, family_fk, fragance_rate, gender, product_photo) VALUES(%s, %s, %s, %s, %s, %s, %s)', (args['name'], args['price'], args["origem_fk"], args["family_fk"], args["fragance_rate"], str(args["gender"]).lower()[0], args['product_photo']))
   
   connection.commit()
   close_connection_db()
