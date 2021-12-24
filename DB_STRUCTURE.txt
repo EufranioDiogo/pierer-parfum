@@ -1,0 +1,38 @@
+Quoter [x]
+	- quoter_pk
+	- name
+	- quote
+	- Photo_url
+	
+Product [x]
+	- product_pk
+	- name
+	- price
+	- origem_fk
+	- family_fk
+	- fragance_rate
+	- gender
+
+Account [x]
+	- account_pk
+	- username
+	- email
+	- password
+	- user_profile_image
+	
+Buy orders [x]
+	- buy_order_pk
+	- product_fk
+	- account_fk
+	- quant_products
+	- price_per_product
+	- total_price
+	- date
+
+Origem [x]
+	- origem_id
+	- origem_name
+	
+Family [x]
+	- family_fk
+	- family_name
