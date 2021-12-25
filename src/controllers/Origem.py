@@ -4,6 +4,14 @@ import psycopg2
 connection = None
 cursor = None
 
+origem_format = {
+  'origem_pk': fields.Integer,
+  'origem_name': fields.String
+}
+
+origem_args = reqparse.RequestParser()
+origem_args.add_argument('origem_name', type=str, help='Need to provide origem origem_name', required=True)
+
 def start_connection_db():
   global connection 
   connection = psycopg2.connect(
@@ -22,15 +30,6 @@ def close_connection_db():
   cursor.close()
   connection.close()
 
-origem_format = {
-  'origem_pk': fields.Integer,
-  'origem_name': fields.String
-}
-
-origem_args = reqparse.RequestParser()
-origem_args.add_argument('origem_name', type=str, help='Need to provide origem origem_name', required=True)
-
-
 def create_origem():
   start_connection_db()
   global cursor, connection
@@ -48,7 +47,8 @@ def create_origem():
       'origem': args
     }
   }, 201
-  
+
+
 def get_all_origems():
   start_connection_db()
   global cursor, connection
@@ -65,6 +65,7 @@ def get_all_origems():
       'origems': origems
     } 
   }, 200
+
 
 def get_spefic_origem(origem_id = 0):
   start_connection_db()
@@ -90,6 +91,7 @@ def get_spefic_origem(origem_id = 0):
       'data': {
       } 
     }, 204
+
 
 def delete_origem(origem_id = 0):
   start_connection_db()

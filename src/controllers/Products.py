@@ -1,26 +1,8 @@
-from flask_restful import Resource, fields, marshal_with, reqparse
+from flask_restful import fields, marshal_with, reqparse
 import psycopg2
 
 connection = None
 cursor = None
-
-def start_connection_db():
-  global connection 
-  connection = psycopg2.connect(
-    host='localhost',
-    database='sm_db',
-    user='postgres',
-    password='postgres'
-  )
-
-  global cursor 
-  cursor = connection.cursor()
-
-def close_connection_db():
-  global connection 
-  global cursor 
-  cursor.close()
-  connection.close()
 
 product_format = {
   'product_pk': fields.Integer,
@@ -42,6 +24,24 @@ product_args.add_argument('gender', type=str, help='Need to provide gender to pr
 product_args.add_argument('product_photo', type=str, required=False)
 
 
+def start_connection_db():
+  global connection 
+  connection = psycopg2.connect(
+    host='localhost',
+    database='sm_db',
+    user='postgres',
+    password='postgres'
+  )
+
+  global cursor 
+  cursor = connection.cursor()
+
+def close_connection_db():
+  global connection 
+  global cursor 
+  cursor.close()
+  connection.close()
+
 
 def create_product():
   start_connection_db()
@@ -61,7 +61,9 @@ def create_product():
       'product': args
     }
   }, 201
-  
+
+
+@marshal_with(product_format)
 def get_all_products():
   start_connection_db()
   global cursor, connection
@@ -78,6 +80,7 @@ def get_all_products():
       'products': products
     } 
   }, 200
+
 
 def get_all_female_products():
   start_connection_db()
@@ -96,6 +99,7 @@ def get_all_female_products():
     } 
   }, 200
 
+
 def get_all_male_products():
   start_connection_db()
   global cursor, connection
@@ -112,7 +116,8 @@ def get_all_male_products():
       'products': products
     } 
   }, 200
-  
+
+
 def get_spefic_product(product_id = 0):
   start_connection_db()
   global cursor, connection
@@ -137,6 +142,7 @@ def get_spefic_product(product_id = 0):
       'data': {
       } 
     }, 204
+
 
 def delete_product(product_id = 0):
   start_connection_db()

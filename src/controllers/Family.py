@@ -4,6 +4,15 @@ import psycopg2
 connection = None
 cursor = None
 
+family_format = {
+  'family_pk': fields.Integer,
+  'family_name': fields.String
+}
+
+family_args = reqparse.RequestParser()
+family_args.add_argument('family_name', type=str, help='Need to provide family family_name', required=True)
+
+
 def start_connection_db():
   global connection 
   connection = psycopg2.connect(
@@ -16,19 +25,12 @@ def start_connection_db():
   global cursor 
   cursor = connection.cursor()
 
+
 def close_connection_db():
   global connection 
   global cursor 
   cursor.close()
   connection.close()
-
-family_format = {
-  'family_pk': fields.Integer,
-  'family_name': fields.String
-}
-
-family_args = reqparse.RequestParser()
-family_args.add_argument('family_name', type=str, help='Need to provide family family_name', required=True)
 
 
 def create_family():
@@ -48,7 +50,8 @@ def create_family():
       'family': args
     }
   }, 201
-  
+
+
 def get_all_families():
   start_connection_db()
   global cursor, connection
@@ -65,6 +68,7 @@ def get_all_families():
       'familys': familys
     } 
   }, 200
+
 
 def get_spefic_family(family_id = 0):
   start_connection_db()
@@ -90,6 +94,7 @@ def get_spefic_family(family_id = 0):
       'data': {
       } 
     }, 204
+
 
 def delete_family(family_id = 0):
   start_connection_db()
