@@ -4,7 +4,7 @@ from src.controllers.Quoters import create_quoter, get_all_quoters, get_spefic_q
 from src.controllers.Products import create_product, delete_product, get_all_products, get_all_female_products, get_all_male_products, get_spefic_product, delete_product
 from src.controllers.Origem import get_all_origems, get_spefic_origem, delete_origem, create_origem
 from src.controllers.Family import get_all_families, get_spefic_family, delete_family, create_family
-
+from src.controllers.Account import create_account, account_verification
 
 app = Flask(__name__)
 CORS(app)
@@ -39,6 +39,9 @@ app.add_url_rule('/products', 'create product', create_product, methods=['POST']
 app.add_url_rule('/products/<product_id>', 'delete specific product', delete_product, methods=['DELETE'])
 
 
+# account
+app.add_url_rule('/account', 'account', create_account, methods=['POST'])
+app.add_url_rule('/account/verify', 'account verify', account_verification, methods=['POST'])
 
 
 if __name__ == '__main__':
