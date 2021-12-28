@@ -1,11 +1,14 @@
 from flask import Flask
-from flask_restful import Api, Resource
+from flask_cors import CORS
 from src.controllers.Quoters import create_quoter, get_all_quoters, get_spefic_quoter
 from src.controllers.Products import create_product, delete_product, get_all_products, get_all_female_products, get_all_male_products, get_spefic_product, delete_product
 from src.controllers.Origem import get_all_origems, get_spefic_origem, delete_origem, create_origem
 from src.controllers.Family import get_all_families, get_spefic_family, delete_family, create_family
 
+
 app = Flask(__name__)
+CORS(app)
+
 
 # quoters
 app.add_url_rule('/quoters', 'quoters', get_all_quoters, methods=['GET'])

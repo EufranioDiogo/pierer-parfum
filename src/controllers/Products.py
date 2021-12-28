@@ -86,7 +86,7 @@ def get_all_female_products():
   start_connection_db()
   global cursor, connection
 
-  cursor.execute('SELECT * FROM product WHERE gender=%s', ('f'))
+  cursor.execute('SELECT P.product_pk, P.name, O.origem_name, F.family_name, P.fragance_rate, P.gender, P.price, P.product_photo FROM product P, origem O, family F WHERE P.origem_fk = O.origem_pk AND P.family_fk = F.family_pk AND gender=%s', ('f'))
   products = cursor.fetchall()
 
   close_connection_db()
@@ -104,7 +104,7 @@ def get_all_male_products():
   start_connection_db()
   global cursor, connection
 
-  cursor.execute('SELECT * FROM product WHERE gender=%s', ('m'))
+  cursor.execute('SELECT P.product_pk, P.name, O.origem_name, F.family_name, P.fragance_rate, P.gender, P.price, P.product_photo FROM product P, origem O, family F WHERE P.origem_fk = O.origem_pk AND P.family_fk = F.family_pk AND gender=%s', ('m'))
   products = cursor.fetchall()
 
   close_connection_db()
