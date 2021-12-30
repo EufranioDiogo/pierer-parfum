@@ -96,3 +96,12 @@
 .fragancy-container--element-inactive {
   background-color: #2229;
 }
+.swal2-title {
+  font-size: 3.2rem;
+}
+.swal2-html-container {
+  font-size: 2rem;
+}
+.swal2-actions {
+  font-size: 2.2rem;
+}
