@@ -23,15 +23,10 @@ const getMenPerfumes = () => {
           productFamily,
           productFraganceRate,
           productGender,
+          productPrice,
           productPhoto,
         ] = perfume;
 
-        console.log(
-          "Provinience: ",
-          productProvinience,
-          "Family: ",
-          productFamily
-        );
         renderPerfumeItem({
           id,
           productName,
@@ -39,6 +34,7 @@ const getMenPerfumes = () => {
           productFamily,
           productFraganceRate,
           productGender,
+          productPrice,
           productPhoto,
         });
       });
