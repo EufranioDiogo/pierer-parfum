@@ -1,0 +1,98 @@
+.product-preview {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 5rem 0;
+}
+
+.product-preview--top-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.top-container--product-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-container--image {
+  width: 45%;
+  height: 47.5rem;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  border: 0.5rem solid #FFC120;
+}
+
+.product-container--perfume-name {
+  font-size: 4.6rem;
+  font-weight: 200;
+}
+
+.top-container--controller-panel {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
+.buy-button {
+  padding: 1rem 3rem;
+  background-color: #ffc020d7;
+  color: #222;
+  border: none;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.buy-button:hover {
+  background-color: #b38000;
+  color: #fff;
+}
+
+.product-price {
+  font-size: 2.6rem;
+  color: #FFC120;
+  display: inline-block;
+}
+
+.product-preview--bottom-container {
+  width: 100%;
+  border-top: 0.1rem solid #FFC120;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.desc-container--more-perfume-details {
+  display: flex;
+  margin-top: 2.5rem;
+  list-style: none;
+}
+
+.more-perfume-details {
+  margin: 0 2rem;
+}
+
+.fragancy-container {
+  display: flex;
+}
+
+.fragancy-container--inner-container {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.fragancy-container--element {
+  height: 100%;
+  width: 0.4rem;
+  background-color: #222;
+  margin-right: 0.2rem;
+}
+
+.fragancy-container--element-inactive {
+  background-color: #2229;
+}
