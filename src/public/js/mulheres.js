@@ -88,7 +88,7 @@ const renderPerfumeItem = (perfume) => {
             </li>
           </ul>
 
-          <a href="#" class="btn-see-more-about-perfume heading-2">
+          <a href="/src/public/html/buy-product.html?product=${perfume.id}" class="btn-see-more-about-perfume heading-2">
             Ver mais
           </a>
         </div>

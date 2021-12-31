@@ -51,7 +51,7 @@ const renderPerfumeItem = (perfume) => {
   <div class="row-2--perfume-container">
         <div class="perfume-container--img-container">
           <img src="${
-            perfume.productPhoto === null
+            perfume.productPhoto === null || perfume.productPhoto.length <= 0
               ? "../../assets/images/perfumes/kailey-sniffin-UPjXnyeGXuA-unsplash.jpg"
               : perfume.productPhoto
           }" 
