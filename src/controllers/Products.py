@@ -81,6 +81,23 @@ def get_all_products():
     } 
   }, 200
 
+def get_all_specific_product(product_id):
+  start_connection_db()
+  global cursor, connection
+
+  cursor.execute('SELECT * FROM product WHERE id=%s', (product_id,))
+  product = cursor.fetchone()
+
+  close_connection_db()
+
+  return {
+    'status': 'success',
+    'message': 'product created',
+    'data': {
+      'product': product
+    } 
+  }, 200
+
 
 def get_all_female_products():
   start_connection_db()
@@ -122,9 +139,10 @@ def get_spefic_product(product_id = 0):
   start_connection_db()
   global cursor, connection
 
-  cursor.execute('SELECT * FROM product WHERE product_pk=%s', (product_id))
+  cursor.execute('SELECT P.product_pk, P.name, O.origem_name, F.family_name, P.fragance_rate, P.gender, P.price, P.product_photo FROM product P, origem O, family F WHERE P.origem_fk = O.origem_pk AND P.family_fk = F.family_pk AND P.product_pk=%s', (product_id,))
 
   product = cursor.fetchone()
+  print(product)
   
   close_connection_db()
 

@@ -25,6 +25,7 @@
   margin-bottom: 2rem;
   box-sizing: border-box;
   border: 0.5rem solid #FFC120;
+  object-fit: cover;
 }
 
 .product-container--perfume-name {
