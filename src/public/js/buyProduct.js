@@ -11,7 +11,7 @@ const renderProductInfo = (product) => {
   <div class="top-container--product-container">
     <img src="${product.productPhoto}" class="product-container--image">
     <h2 class="product-container--perfume-name">
-      Pierer Oblier
+      Pierer ${product.productName}
     </h2>
   </div>
 
@@ -69,7 +69,6 @@ const getPerfumeData = (productId) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
       const [
         id,
         productName,
@@ -95,7 +94,6 @@ const getPerfumeData = (productId) => {
     .catch((error) => {
       console.log(error);
     });
-  console.log(productId);
 };
 
 const buyProduct = (e) => {
