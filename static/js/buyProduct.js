@@ -1,10 +1,13 @@
 const productId = window.location.toString().split("=")[1];
 const API_BASE_URL = "http://localhost:5000";
 const PRODUCT_BY_ID = `/products/${productId}`;
+const BUY_PRODUCT_END_POINT = `/products/${productId}/buy`;
 const productPreviewContainer = document.querySelector(".product-preview");
+let productObject = {};
 
 const renderProductInfo = (product) => {
   const previewContainer = document.querySelector(".product-preview");
+  productObject = { ...product };
 
   previewContainer.innerHTML = `
   <div class="product-preview--top-container">
@@ -29,7 +32,9 @@ const renderProductInfo = (product) => {
   <ul class="desc-container--more-perfume-details">
     <li class="more-perfume-details">
       <h4 class="more-perfume-details--label normal-text under-line">Origem</h4>
-      <h4 class="more-perfume-details--value normal-text">${product.productOrigem}</h4>
+      <h4 class="more-perfume-details--value normal-text">${
+        product.productOrigem
+      }</h4>
     </li>
 
     <li class="more-perfume-details">
@@ -49,12 +54,16 @@ const renderProductInfo = (product) => {
 
     <li class="more-perfume-details">
       <h4 class="more-perfume-details--label normal-text under-line">Familia</h4>
-      <h4 class="more-perfume-details--value normal-text">${product.productFamily}</h4>
+      <h4 class="more-perfume-details--value normal-text">${
+        product.productFamily
+      }</h4>
     </li>
 
     <li class="more-perfume-details">
       <h4 class="more-perfume-details--label normal-text under-line">Genêro</h4>
-      <h4 class="more-perfume-details--value normal-text">${product.productGender === 'm' ? 'Masculino' : 'Femenino'}</h4>
+      <h4 class="more-perfume-details--value normal-text">${
+        product.productGender === "m" ? "Masculino" : "Femenino"
+      }</h4>
     </li>
   </ul>
 </div>
@@ -78,7 +87,7 @@ const getPerfumeData = (productId) => {
         productGender,
         productPrice,
         productPhoto,
-       ] = data.data.product;
+      ] = data.data.product;
 
       renderProductInfo({
         id,
@@ -97,13 +106,43 @@ const getPerfumeData = (productId) => {
 };
 
 const buyProduct = (e) => {
-  Swal.fire(
-    "Compra Efectuada com Sucesso!",
-    "Clique para verificar!",
-    "success"
-  );
+  const accountId = localStorage.getItem('pierer_parfum_account_id')
+  const quant_products = 1
+
+
+  fetch(API_BASE_URL + BUY_PRODUCT_END_POINT, {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "*",
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify({
+      product_fk: productObject.id,
+      account_fk: accountId,
+      quant_product: quant_products,
+      price_per_product: productObject.productPrice,
+      total_price: productObject.productPrice * quant_products,
+      date: (new Date()).getUTCDate()
+    }),
+  })
+  .then(async response => {
+    const data = await response.json();
+    Swal.fire(
+      "Compra Efectuada com Sucesso!",
+      "Clique para verificar!",
+      "success"
+    );
+  })
+  .catch(error => {
+    Swal.fire(
+      "Compra Não Efectuada com Sucesso!",
+      "Tente mais tarde novamente",
+      "error"
+    );
+  })
+ 
 };
-
-
 
 getPerfumeData(productId);

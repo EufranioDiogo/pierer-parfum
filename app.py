@@ -8,6 +8,8 @@ from controllers.Account import create_account, account_verification
 from blue_prints.home import home as homeBlueprint
 from blue_prints.homens import homens as homensBlueprint
 from blue_prints.mulheres import mulheres as mulheresBlueprint
+from blue_prints.about import about as aboutBlueprint
+from blue_prints.buy import buy as buyBlueprint
 
 
 
@@ -18,6 +20,8 @@ CORS(app)
 app.register_blueprint(homeBlueprint, url_prefix="")
 app.register_blueprint(homensBlueprint, url_prefix="/homens")
 app.register_blueprint(mulheresBlueprint, url_prefix="/mulheres")
+app.register_blueprint(aboutBlueprint, url_prefix="/about")
+app.register_blueprint(buyBlueprint, url_prefix="/buy")
 
 
 # quoters

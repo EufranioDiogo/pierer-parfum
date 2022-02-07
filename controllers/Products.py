@@ -48,7 +48,6 @@ def create_product():
   global cursor, connection
 
   args = product_args.parse_args()
-  print(args)
   cursor.execute(f'INSERT INTO product(name, price, origem_fk, family_fk, fragance_rate, gender, product_photo) VALUES(%s, %s, %s, %s, %s, %s, %s)', (args['name'], args['price'], args["origem_fk"], args["family_fk"], args["fragance_rate"], str(args["gender"]).lower()[0], args['product_photo']))
   
   connection.commit()
