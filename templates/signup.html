@@ -4,44 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" ></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/signup.css">
-  <title>Pierer Parfum - Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+  <title>Pierer Parfum - Signup</title>
 </head>
 
 <body>
   <div class="main-container">
     <h1 class="heading-1 main-title">Pierer Parfum</h1>
-    <form action="" class="form-container">
+    <form class="form-container">
       <h1 class="heading-1">Cadastro</h1>
 
       <div class="form-container--inner-container">
         <div class="inner-container--form">
           <div class="inner-container--row">
-            <input type="text" class="inner-container--row-input" placeholder="Username">
+            <input type="text" class="inner-container--row-input" placeholder="Username" name="username">
           </div>
 
           <div class="inner-container--row">
-            <input type="email" class="inner-container--row-input" placeholder="example@gmail.com">
+            <input type="email" class="inner-container--row-input" placeholder="example@gmail.com" name="email">
           </div>
 
           <div class="inner-container--row">
-            <input type="password" class="inner-container--row-input" placeholder="Password">
+            <input type="password" class="inner-container--row-input" placeholder="Password" name="password">
           </div>
         </div>
 
         <div class="form-container--controller">
           <button class="form-container--controller-submit-button">
-            login
+            Cadastrar
           </button>
         </div>
       </div>
 
-      <h3 class="heading-3">Não possui nenhuma conta? <a href="../html/login.html" class="main-color main-link-decoration">Login</a></h3>
+      <h3 class="heading-3">Não possui nenhuma conta? <a href="/auth/login" class="main-color main-link-decoration">Login</a></h3>
     </form>
   </div>
+
+  <script src="{{ url_for('static', filename='js/auth/signup.js') }}"></script>
 </body>
 
 </html>

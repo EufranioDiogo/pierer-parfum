@@ -142,7 +142,6 @@ const buyProduct = (e) => {
       "error"
     );
   })
- 
 };
 
 getPerfumeData(productId);
