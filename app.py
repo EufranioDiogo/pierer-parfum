@@ -7,12 +7,17 @@ from controllers.Family import get_all_families, get_spefic_family, delete_famil
 from controllers.Account import create_account, account_verification
 from blue_prints.home import home as homeBlueprint
 from blue_prints.homens import homens as homensBlueprint
+from blue_prints.mulheres import mulheres as mulheresBlueprint
 
 
 
 
 app = Flask(__name__)
 CORS(app)
+
+app.register_blueprint(homeBlueprint, url_prefix="")
+app.register_blueprint(homensBlueprint, url_prefix="/homens")
+app.register_blueprint(mulheresBlueprint, url_prefix="/mulheres")
 
 
 # quoters
@@ -23,9 +28,9 @@ app.add_url_rule('/quoters', 'create quoter', create_quoter, methods=['POST'])
 
 # families
 app.add_url_rule('/families', 'families', get_all_families, methods=['GET'])
-app.add_url_rule('/families/<family_id>', 'get specific family', get_spefic_family, methods=['GET'])
+app.add_url_rule('/families/<int:family_id>', 'get specific family', get_spefic_family, methods=['GET'])
 app.add_url_rule('/families', 'create family', create_family, methods=['POST'])
-app.add_url_rule('/families/<family_id>', 'delete specific family', delete_family, methods=['DELETE'])
+app.add_url_rule('/families/<int:family_id>', 'delete specific family', delete_family, methods=['DELETE'])
 
 
 # origem
@@ -48,8 +53,8 @@ app.add_url_rule('/products/<product_id>', 'delete specific product', delete_pro
 app.add_url_rule('/account', 'account', create_account, methods=['POST'])
 app.add_url_rule('/account/verify', 'account verify', account_verification, methods=['POST'])
 
-app.register_blueprint(homeBlueprint, url_prefix="")
-app.register_blueprint(homensBlueprint, url_prefix="/homens")
+
+
 
 if __name__ == '__main__':
   app.run(debug=True)
