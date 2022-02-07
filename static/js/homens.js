@@ -3,7 +3,7 @@ const MEN_PERFUMES_ENDPOINT = "/products/male";
 const perfumesContainer = document.querySelector("#perfume-container");
 
 const getMenPerfumes = () => {
-  console.log("Entrou");
+  console.log("Entrou 2");
   fetch(API_BASE_URL + MEN_PERFUMES_ENDPOINT, {
     method: "GET",
     headers: {

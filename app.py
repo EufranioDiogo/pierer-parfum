@@ -1,10 +1,15 @@
 from flask import Flask
 from flask_cors import CORS
-from src.controllers.Quoters import create_quoter, get_all_quoters, get_spefic_quoter
-from src.controllers.Products import create_product, delete_product, get_all_products, get_all_female_products, get_all_male_products, get_spefic_product, delete_product
-from src.controllers.Origem import get_all_origems, get_spefic_origem, delete_origem, create_origem
-from src.controllers.Family import get_all_families, get_spefic_family, delete_family, create_family
-from src.controllers.Account import create_account, account_verification
+from controllers.Quoters import create_quoter, get_all_quoters, get_spefic_quoter
+from controllers.Products import create_product, delete_product, get_all_products, get_all_female_products, get_all_male_products, get_spefic_product, delete_product
+from controllers.Origem import get_all_origems, get_spefic_origem, delete_origem, create_origem
+from controllers.Family import get_all_families, get_spefic_family, delete_family, create_family
+from controllers.Account import create_account, account_verification
+from blue_prints.home import home as homeBlueprint
+from blue_prints.homens import homens as homensBlueprint
+
+
+
 
 app = Flask(__name__)
 CORS(app)
@@ -43,6 +48,8 @@ app.add_url_rule('/products/<product_id>', 'delete specific product', delete_pro
 app.add_url_rule('/account', 'account', create_account, methods=['POST'])
 app.add_url_rule('/account/verify', 'account verify', account_verification, methods=['POST'])
 
+app.register_blueprint(homeBlueprint, url_prefix="")
+app.register_blueprint(homensBlueprint, url_prefix="/homens")
 
 if __name__ == '__main__':
   app.run(debug=True)

@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/menu.css">
-  <link rel="stylesheet" href="../css/homens.css">
-  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/homens.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
   <title>Parfum Pierer - Homens</title>
 </head>
@@ -23,19 +23,19 @@
 
       <ul class="main-menu-container--menu">
         <li class="main-menu--item">
-          <a href="../index.html" class="menu-item--link">Home</a>
+          <a href="/" class="menu-item--link">Home</a>
         </li>
         <li class="main-menu-item">
           <a href="#" class="menu-item--link">Homens</a>
         </li>
         <li class="main-menu-item">
-          <a href="../html/mulheres.html" class="menu-item--link">Mulheres</a>
+          <a href="/mulheres" class="menu-item--link">Mulheres</a>
         </li>
         <li class="main-menu-item">
-          <a href="../html/about.html" class="menu-item--link">História</a>
+          <a href="/about" class="menu-item--link">História</a>
         </li>
         <li class="main-menu-item">
-          <a href="../html/login.html" class="menu-item--link" target="_blank">Login</a>
+          <a href="/login" class="menu-item--link" target="_blank">Login</a>
         </li>
       </ul>
     </div>
@@ -49,7 +49,7 @@
       </div>
 
       <div class="photo-container">
-        <img src="../../assets/images/pexels-edson-habacuc-rafael-904332.jpg" alt=""
+        <img src="{{url_for('static', filename='assets/images/pexels-edson-habacuc-rafael-904332.jpg') }}" alt=""
           class="row-container img-header-img">
       </div>
     </div>
@@ -67,7 +67,7 @@
 
     <ul class="main-menu-container--menu footer-container--middle-container">
       <li class="main-menu--item">
-        <a href="../index.html" class="menu-item--link">Home</a>
+        <a href="/" class="menu-item--link">Home</a>
       </li>
       <li class="main-menu-item">
         <a href="#" class="menu-item--link">Homens</a>
@@ -113,7 +113,7 @@
 
   </footer>
 
-  <script src="../js/homens.js"></script>
+  <script src="{{url_for('static', filename='js/homens.js') }}"></script>
 </body>
 
 </html>
