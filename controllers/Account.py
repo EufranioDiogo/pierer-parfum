@@ -116,7 +116,6 @@ def account_verification():
   
 
 def verify_authenticity():
-  print('--------------------------')
   global cursor, connection
   start_connection_db()
 
@@ -124,7 +123,6 @@ def verify_authenticity():
   token = str(request.headers.get('Authorization'))[1:]
   token = token[:len(token) - 1]
   token_information = decode(token, key='mjnsdjnsjddsjdns')
-  print('dinsi')
   
   cursor.execute('SELECT account_pk, username, password FROM account WHERE username=%s', (token_information['username'],))
 

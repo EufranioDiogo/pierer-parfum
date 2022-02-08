@@ -81,3 +81,40 @@ def post_buy_spefic_product(product_id = 0):
         'data': {
         } 
       }, 500
+
+
+def get_my_buy_orders():
+  global cursor, connection
+  start_connection_db()
+
+
+  token = str(request.headers.get('Authorization'))[1:]
+  token = token[:len(token) - 1]
+  token_information = decode(token, key='mjnsdjnsjddsjdns')
+  
+  cursor.execute('SELECT account_pk, username, password FROM account WHERE username=%s', (token_information['username'],))
+
+  user = cursor.fetchone()
+  close_connection_db()
+
+  cursor.execute('SELECT P.product_pk, P.name, O.origem_name, F.family_name, P.fragance_rate, P.gender, P.price, P.product_photo  FROM buy_orders B, product P, family F, origem O WHERE P.product_pk = B.product_fk AND B.account_fk = %s AND F.family_pk = P.family_fk AND O.origem_pk = P.origem_fk', (user[0],))
+
+  my_buy_orders = cursor.fetchall()
+  
+  close_connection_db()
+
+  try:
+      return {
+        'status': 'success',
+        'message': 'buy order created',
+        'data': {
+          'products': my_buy_orders
+          } 
+        }, 200
+  except print(0):
+      return {
+        'status': 'insucess',
+        'message': 'buy order not created',
+        'data': {
+        } 
+      }, 500
