@@ -1,7 +1,7 @@
 from flask_restful import fields, marshal_with, reqparse, request
 from pexpect import ExceptionPexpect
 import psycopg2
-from jwt import encode, decode
+from jwt import encode, decode, utils
 connection = None
 cursor = None
 
@@ -55,10 +55,16 @@ def post_buy_spefic_product(product_id = 0):
         'data': {
         } 
       }, 400
-  print(str(request.headers.get('Authorization')))
+  token = str(request.headers.get('Authorization'))[1:]
+  token = token[:len(token) - 1]
+  token_information = decode(token, key='mjnsdjnsjddsjdns')
+  
+  cursor.execute('SELECT account_pk, username, password FROM account WHERE username=%s', (token_information['username'],))
+
+  user = cursor.fetchone()
 
   try:
-      cursor.execute('INSERT INTO buy_orders(product_fk, account_fk, quant_products, price_per_product, total_price, date) VALUES (%s, %s, %s, %s, %s, %s);', (args['product_fk'], args['account_fk'], args['quant_product'], args['price_per_product'], args['total_price'], args['date']))
+      cursor.execute('INSERT INTO buy_orders(product_fk, account_fk, quant_products, price_per_product, total_price, date) VALUES (%s, %s, %s, %s, %s, %s);', (args['product_fk'], user[0], args['quant_product'], args['price_per_product'], args['total_price'], args['date']))
       
       connection.commit()
       close_connection_db()
@@ -75,4 +81,3 @@ def post_buy_spefic_product(product_id = 0):
         'data': {
         } 
       }, 500
-
