@@ -21,10 +21,10 @@
       <div class="form-container--inner-container">
         <div class="inner-container--form">
           <div class="inner-container--row">
-            <input type="text" class="inner-container--row-input" placeholder="Username">
+            <input type="text" class="inner-container--row-input" name="username" placeholder="Username">
           </div>
           <div class="inner-container--row">
-            <input type="password" class="inner-container--row-input" placeholder="Password">
+            <input type="password" name="password" class="inner-container--row-input" placeholder="Password">
           </div>
         </div>
 
@@ -38,6 +38,8 @@
       <h3 class="heading-3">Não possui nenhuma conta? <a href="/auth/signup" class="main-color main-link-decoration">Cadastro</a></h3>
     </form>
   </div>
+
+  <script src="{{ url_for('static', filename='js/auth/login.js') }}"></script>
 </body>
 
 </html>

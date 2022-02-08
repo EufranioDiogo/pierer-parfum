@@ -41,17 +41,18 @@ def get_hashed_password(plain_text_password):
   return bcrypt.hashpw(plain_text_password, bcrypt.gensalt())
 
 def check_password(plain_text_password, hashed_password):
-  return bcrypt.checkpw(plain_text_password, hashed_password)
+  return bcrypt.checkpw(plain_text_password, hashed_password, salt=bcrypt.gensalt())
 
 def create_account():
   global cursor, connection
   start_connection_db()
   args = account_args.parse_args()
+  password = args['password'] 
   args['password'] = args['password'].encode('utf-8')
   passwordEncrypted = get_hashed_password(args['password'])
   
   try:
-      cursor.execute(f'INSERT INTO account(username, email, password) VALUES(%s, %s, %s)', (args['username'], args['email'], passwordEncrypted,))
+      cursor.execute(f'INSERT INTO account(username, email, password) VALUES(%s, %s, %s)', (args['username'], args['email'], password,))
   
       connection.commit()
       close_connection_db()
@@ -81,7 +82,6 @@ def account_verification():
   start_connection_db()
   args = account_args.parse_args()
   username = args['username']
-  print(username)
   password = args['password'].encode('utf-8')
 
 
@@ -89,10 +89,15 @@ def account_verification():
 
   user = cursor.fetchone()
   close_connection_db()
+  print(user[1])
+
 
   if (user):
-    if check_password(password, user[1].encode('utf-8')):
-      jwt_token = encode({'data': f'{args["username"]} {user[1]}' }, 'EXAMPLE',algorithm='HS256')
+    if user[1] == args['password']:
+      payload = {
+        'username': args['username']
+      }
+      jwt_token = encode(payload=payload, key="mjnsdjnsjddsjdns")
 
       return {
         'status': 'success',

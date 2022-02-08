@@ -49,5 +49,3 @@ document
 
     signupUser(accountData);
   });
-
-console.log('dmsimdsi')
