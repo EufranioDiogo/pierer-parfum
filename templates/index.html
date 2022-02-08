@@ -56,7 +56,7 @@
             <a href="/about" class="menu-item--link">História</a>
           </li>
           <li class="main-menu-item">
-            <a href="/auth/login" class="menu-item--link">Login</a>
+            <a href="/auth/login" class="menu-item--link" id="login-button">Login</a>
           </li>
         </ul>
       </div>
@@ -853,6 +853,7 @@
       </div>
     </footer>
 
-    <script src="../js/index.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/auth/authenticated.js') }}"></script>
   </body>
 </html>

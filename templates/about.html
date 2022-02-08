@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/menu.css">
-  <link rel="stylesheet" href="../css/about.css">
-  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
   <title>Pierer Parfum - História</title>
 </head>
@@ -23,19 +23,23 @@
 
       <ul class="main-menu-container--menu">
         <li class="main-menu--item">
-          <a href="../index.html" class="menu-item--link">Home</a>
+          <a href="/" class="menu-item--link">Home</a>
         </li>
         <li class="main-menu-item">
-          <a href="../html/homens.html" class="menu-item--link">Homens</a>
+          <a href="/homens" class="menu-item--link">Homens</a>
         </li>
         <li class="main-menu-item">
-          <a href="../html/mulheres.html" class="menu-item--link">Mulheres</a>
+          <a href="/mulheres" class="menu-item--link">Mulheres</a>
         </li>
         <li class="main-menu-item">
-          <a href="#" class="menu-item--link">História</a>
+          <a href="/about" class="menu-item--link">História</a>
         </li>
         <li class="main-menu-item">
-          <a href="../html/login.html" class="menu-item--link" target="_blank">Login</a>
+          <a href="/auth/login" class="menu-item--link" target="_blank">Login</a>
+        </li>
+
+        <li class="main-menu-item">
+          <a href="/buy_orders" class="menu-item--link">Compras</a>
         </li>
       </ul>
     </div>
@@ -227,6 +231,7 @@
     </div>
 
   </footer>
+  <script src="{{ url_for('static', filename='js/auth/authenticated.js') }}"></script>
 </body>
 
 </html>

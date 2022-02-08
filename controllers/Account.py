@@ -1,7 +1,7 @@
-from flask_restful import Resource, fields, marshal_with, reqparse
+from flask_restful import fields, request, reqparse
 import psycopg2
 import bcrypt
-from jwt import encode
+from jwt import encode, decode
 
 connection = None
 cursor = None
@@ -107,6 +107,38 @@ def account_verification():
         }
       }, 200
 
+  return {
+    'status': 'no success',
+    'message': 'Account not verified',
+    'data': {
+    }
+  }, 403
+  
+
+def verify_authenticity():
+  print('--------------------------')
+  global cursor, connection
+  start_connection_db()
+
+
+  token = str(request.headers.get('Authorization'))[1:]
+  token = token[:len(token) - 1]
+  token_information = decode(token, key='mjnsdjnsjddsjdns')
+  print('dinsi')
+  
+  cursor.execute('SELECT account_pk, username, password FROM account WHERE username=%s', (token_information['username'],))
+
+  user = cursor.fetchone()
+  close_connection_db()
+
+
+  if (user):
+    return {
+      'status': 'success',
+      'message': 'Account verified',
+      'data': {
+      }
+    }, 200
   return {
     'status': 'no success',
     'message': 'Account not verified',
