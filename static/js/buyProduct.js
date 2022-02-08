@@ -106,9 +106,9 @@ const getPerfumeData = (productId) => {
 };
 
 const buyProduct = (e) => {
-  const accountId = localStorage.getItem('pierer_parfum_account_id')
-  const quant_products = 1
-
+  const accountId = localStorage.getItem("pierer_parfum_account_id");
+  const quant_products = 1;
+  const token = localStorage.getItem('pierer_parfum_token');
 
   fetch(API_BASE_URL + BUY_PRODUCT_END_POINT, {
     headers: {
@@ -116,32 +116,33 @@ const buyProduct = (e) => {
       "Access-Control-Allow-Credentials": "true",
       "Access-Control-Allow-Headers": "*",
       "Content-Type": "application/json",
+      "Authorization": token
     },
     method: "POST",
     body: JSON.stringify({
       product_fk: productObject.id,
-      account_fk: accountId,
+      account_fk: 2,
       quant_product: quant_products,
       price_per_product: productObject.productPrice,
       total_price: productObject.productPrice * quant_products,
-      date: (new Date()).getUTCDate()
+      date: new Date(),
     }),
   })
-  .then(async response => {
-    const data = await response.json();
-    Swal.fire(
-      "Compra Efectuada com Sucesso!",
-      "Clique para verificar!",
-      "success"
-    );
-  })
-  .catch(error => {
-    Swal.fire(
-      "Compra Não Efectuada com Sucesso!",
-      "Tente mais tarde novamente",
-      "error"
-    );
-  })
+    .then(async (response) => {
+      const data = await response.json();
+      Swal.fire(
+        "Compra Efectuada com Sucesso!",
+        "Clique para verificar!",
+        "success"
+      );
+    })
+    .catch((error) => {
+      Swal.fire(
+        "Compra Não Efectuada com Sucesso!",
+        "Tente mais tarde novamente",
+        "error"
+      );
+    });
 };
 
 getPerfumeData(productId);

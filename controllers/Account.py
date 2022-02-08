@@ -55,9 +55,10 @@ def create_account():
   
       connection.commit()
       close_connection_db()
-
-
-      jwt_token = encode({ 'data': f'{args["username"]} {passwordEncrypted}' }, 'EXAMPLE',algorithm='HS256')
+      payload = {
+        'username': args['username']
+      }
+      jwt_token = encode(payload=payload, key="mjnsdjnsjddsjdns")
       
 
       return {

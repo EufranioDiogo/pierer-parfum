@@ -13,11 +13,7 @@ const signupUser = (accountData) => {
     body: JSON.stringify(accountData),
   })
     .then(async (response) => {
-      console.log('Res: ', response)
-
       const data = await response.json();
-
-      console.log('Data: ', data)
 
       localStorage.setItem('pierer_parfum_token', JSON.stringify(data.data.token))
 
@@ -26,6 +22,9 @@ const signupUser = (accountData) => {
         "Clique para continuar!",
         "success"
       );
+      setTimeout(() => {
+        window.location.pathname = '/'
+      }, 2500)
     })
     .catch((error) => {
       Swal.fire(

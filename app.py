@@ -1,7 +1,9 @@
+from crypt import methods
 from flask import Flask
 from flask_cors import CORS
 from controllers.Quoters import create_quoter, get_all_quoters, get_spefic_quoter
 from controllers.Products import create_product, delete_product, get_all_products, get_all_female_products, get_all_male_products, get_spefic_product, delete_product
+from controllers.Buy import post_buy_spefic_product
 from controllers.Account import create_account, account_verification
 from blue_prints.home import home as homeBlueprint
 from blue_prints.homens import homens as homensBlueprint
@@ -40,6 +42,9 @@ app.add_url_rule('/products/<product_id>', 'delete specific product', delete_pro
 # account
 app.add_url_rule('/account', 'account', create_account, methods=['POST'])
 app.add_url_rule('/account/verify', 'account verify', account_verification, methods=['POST'])
+
+# buy order
+app.add_url_rule('/products/<int:product_id>/buy', 'buy order', post_buy_spefic_product, methods=['POST'])
 
 
 
