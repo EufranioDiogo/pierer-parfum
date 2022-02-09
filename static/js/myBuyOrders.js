@@ -1,6 +1,6 @@
 const API_BASE_URL = "http://localhost:5000";
 const BUY_ORDERS_ENDPOINT = "/my_buy_orders";
-const perfumesContainer = document.querySelector("#perfume-container");
+const container = document.querySelector("#perfume-container");
 
 const getMyBuyOrders = () => {
   const token = localStorage.getItem("pierer_parfum_token");
@@ -17,7 +17,6 @@ const getMyBuyOrders = () => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
       data?.data?.products?.map(async (perfume) => {
         const [
           id,
@@ -30,7 +29,18 @@ const getMyBuyOrders = () => {
           productPhoto,
         ] = perfume;
 
-        renderPerfumeItem({
+        console.log({
+          id,
+          productName,
+          productProvinience,
+          productFamily,
+          productFraganceRate,
+          productGender,
+          productPrice,
+          productPhoto,
+        })
+
+        render({
           id,
           productName,
           productProvinience,
@@ -41,15 +51,13 @@ const getMyBuyOrders = () => {
           productPhoto,
         });
       });
-
-      console.log("Perfumes: ", data);
     })
     .catch((err) => {
       console.log(err);
     });
 };
 
-const renderPerfumeItem = (perfume) => {
+const render = (perfume) => {
   const div = `
   <div class="row-2--perfume-container">
         <div class="perfume-container--img-container">
@@ -90,14 +98,11 @@ const renderPerfumeItem = (perfume) => {
             </li>
           </ul>
 
-          <a href="/buy?product=${perfume.id}" class="btn-see-more-about-perfume heading-2">
-            Comprar
-          </a>
         </div>
       </div>
   `;
 
-  perfumesContainer.innerHTML += div;
+  container.innerHTML += div;
 };
 
 getMyBuyOrders();

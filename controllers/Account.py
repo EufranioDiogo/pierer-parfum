@@ -89,10 +89,10 @@ def account_verification():
 
   user = cursor.fetchone()
   close_connection_db()
-  print(user[1])
+  print(user[1], args['password'])
 
 
-  if (user):
+  if (user != None):
     if user[1] == args['password']:
       payload = {
         'username': args['username']

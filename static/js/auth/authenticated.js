@@ -36,7 +36,7 @@ const changeLoginToLogout = () => {
   console.log('Txe meu nengue')
   document.querySelector("#login-button").textContent = "Logout";
 
-  document.querySelector("#buy-orders-button").style = "display: inline-block";
+  document.querySelector('#buy-orders-button-item').style.display = 'block'
   document.querySelector("#login-button").addEventListener("click", () => {
     localStorage.removeItem("pierer_parfum_token");
   });
@@ -44,7 +44,7 @@ const changeLoginToLogout = () => {
 
 const changeLogoutToLogin = () => {
   document.querySelector("#login-button").textContent = "Login";
-  document.querySelector("#buy-orders-button-item").style = "display: none";
+  document.querySelector('#buy-orders-button-item').style.display = 'none'
 
   document.querySelector("#login-button").addEventListener("click", () => {});
 };

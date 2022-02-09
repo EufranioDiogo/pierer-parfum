@@ -1,7 +1,7 @@
 const API_BASE_URL = "http://localhost:5000";
 const SIGNUP_END_POINT = `/account/verify`;
 
-const signupUser = (accountData) => {
+const loginUser = (accountData) => {
   fetch(API_BASE_URL + SIGNUP_END_POINT, {
     headers: {
       "Access-Control-Allow-Origin": "*",
@@ -15,18 +15,22 @@ const signupUser = (accountData) => {
     .then(async (response) => {
       const data = await response.json();
 
-      localStorage.setItem('pierer_parfum_token', JSON.stringify(data.data.token))
+      console.log(data)
+      if (data.status == "success") {
+        localStorage.setItem(
+          "pierer_parfum_token",
+          JSON.stringify(data.data.token)
+        );
 
-      setTimeout(() => {
-        window.location.pathname = '/'
-      }, 2500)
+        setTimeout(() => {
+          window.location.pathname = "/";
+        }, 2500);
+      } else {
+        Swal.fire("Dados errados!", "Tente mais tarde novamente", "error");
+      }
     })
     .catch((error) => {
-      Swal.fire(
-        "Dados errados!",
-        "Tente mais tarde novamente",
-        "error"
-      );
+      Swal.fire("Dados errados!", "Tente mais tarde novamente", "error");
     });
 };
 
@@ -42,5 +46,5 @@ document
       accountData[formElement[0]] = formElement[1];
     }
 
-    signupUser(accountData);
+    loginUser(accountData);
   });

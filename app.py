@@ -11,6 +11,7 @@ from blue_prints.mulheres import mulheres as mulheresBlueprint
 from blue_prints.about import about as aboutBlueprint
 from blue_prints.buy import buy as buyBlueprint
 from blue_prints.auth import auth as authBlueprint
+from blue_prints.myBuyOrders import myBuyOrders as buyOrdersBlueprint
 
 
 
@@ -24,6 +25,7 @@ app.register_blueprint(mulheresBlueprint, url_prefix="/mulheres")
 app.register_blueprint(aboutBlueprint, url_prefix="/about")
 app.register_blueprint(buyBlueprint, url_prefix="/buy")
 app.register_blueprint(authBlueprint, url_prefix="/auth")
+app.register_blueprint(buyOrdersBlueprint, url_prefix="/buy_orders")
 
 
 # quoters

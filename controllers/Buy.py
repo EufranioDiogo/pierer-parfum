@@ -95,7 +95,6 @@ def get_my_buy_orders():
   cursor.execute('SELECT account_pk, username, password FROM account WHERE username=%s', (token_information['username'],))
 
   user = cursor.fetchone()
-  close_connection_db()
 
   cursor.execute('SELECT P.product_pk, P.name, O.origem_name, F.family_name, P.fragance_rate, P.gender, P.price, P.product_photo  FROM buy_orders B, product P, family F, origem O WHERE P.product_pk = B.product_fk AND B.account_fk = %s AND F.family_pk = P.family_fk AND O.origem_pk = P.origem_fk', (user[0],))
 
