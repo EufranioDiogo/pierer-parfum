@@ -14,3 +14,4 @@ python-decouple
 flask-cors
 python-bcrypt==0.3.2
 pyjwt
+psycopg2
